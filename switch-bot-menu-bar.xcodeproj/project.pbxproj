@@ -1,0 +1,554 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		D81445A92D6F0C0100EB2A41 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D814458F2D6F0BFF00EB2A41 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D81445962D6F0BFF00EB2A41;
+			remoteInfo = "switch-bot-menu-bar";
+		};
+		D81445B32D6F0C0100EB2A41 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D814458F2D6F0BFF00EB2A41 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D81445962D6F0BFF00EB2A41;
+			remoteInfo = "switch-bot-menu-bar";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D81445972D6F0BFF00EB2A41 /* switch-bot-menu-bar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "switch-bot-menu-bar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D81445A82D6F0C0100EB2A41 /* switch-bot-menu-barTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "switch-bot-menu-barTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D81445B22D6F0C0100EB2A41 /* switch-bot-menu-barUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "switch-bot-menu-barUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		D81445992D6F0BFF00EB2A41 /* switch-bot-menu-bar */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "switch-bot-menu-bar";
+			sourceTree = "<group>";
+		};
+		D81445AB2D6F0C0100EB2A41 /* switch-bot-menu-barTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "switch-bot-menu-barTests";
+			sourceTree = "<group>";
+		};
+		D81445B52D6F0C0100EB2A41 /* switch-bot-menu-barUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "switch-bot-menu-barUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D81445942D6F0BFF00EB2A41 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D81445A52D6F0C0100EB2A41 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D81445AF2D6F0C0100EB2A41 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D814458E2D6F0BFF00EB2A41 = {
+			isa = PBXGroup;
+			children = (
+				D81445992D6F0BFF00EB2A41 /* switch-bot-menu-bar */,
+				D81445AB2D6F0C0100EB2A41 /* switch-bot-menu-barTests */,
+				D81445B52D6F0C0100EB2A41 /* switch-bot-menu-barUITests */,
+				D81445982D6F0BFF00EB2A41 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D81445982D6F0BFF00EB2A41 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D81445972D6F0BFF00EB2A41 /* switch-bot-menu-bar.app */,
+				D81445A82D6F0C0100EB2A41 /* switch-bot-menu-barTests.xctest */,
+				D81445B22D6F0C0100EB2A41 /* switch-bot-menu-barUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D81445962D6F0BFF00EB2A41 /* switch-bot-menu-bar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D81445BC2D6F0C0100EB2A41 /* Build configuration list for PBXNativeTarget "switch-bot-menu-bar" */;
+			buildPhases = (
+				D81445932D6F0BFF00EB2A41 /* Sources */,
+				D81445942D6F0BFF00EB2A41 /* Frameworks */,
+				D81445952D6F0BFF00EB2A41 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				D81445992D6F0BFF00EB2A41 /* switch-bot-menu-bar */,
+			);
+			name = "switch-bot-menu-bar";
+			packageProductDependencies = (
+			);
+			productName = "switch-bot-menu-bar";
+			productReference = D81445972D6F0BFF00EB2A41 /* switch-bot-menu-bar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D81445A72D6F0C0100EB2A41 /* switch-bot-menu-barTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D81445BF2D6F0C0100EB2A41 /* Build configuration list for PBXNativeTarget "switch-bot-menu-barTests" */;
+			buildPhases = (
+				D81445A42D6F0C0100EB2A41 /* Sources */,
+				D81445A52D6F0C0100EB2A41 /* Frameworks */,
+				D81445A62D6F0C0100EB2A41 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D81445AA2D6F0C0100EB2A41 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				D81445AB2D6F0C0100EB2A41 /* switch-bot-menu-barTests */,
+			);
+			name = "switch-bot-menu-barTests";
+			packageProductDependencies = (
+			);
+			productName = "switch-bot-menu-barTests";
+			productReference = D81445A82D6F0C0100EB2A41 /* switch-bot-menu-barTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D81445B12D6F0C0100EB2A41 /* switch-bot-menu-barUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D81445C22D6F0C0100EB2A41 /* Build configuration list for PBXNativeTarget "switch-bot-menu-barUITests" */;
+			buildPhases = (
+				D81445AE2D6F0C0100EB2A41 /* Sources */,
+				D81445AF2D6F0C0100EB2A41 /* Frameworks */,
+				D81445B02D6F0C0100EB2A41 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D81445B42D6F0C0100EB2A41 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				D81445B52D6F0C0100EB2A41 /* switch-bot-menu-barUITests */,
+			);
+			name = "switch-bot-menu-barUITests";
+			packageProductDependencies = (
+			);
+			productName = "switch-bot-menu-barUITests";
+			productReference = D81445B22D6F0C0100EB2A41 /* switch-bot-menu-barUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D814458F2D6F0BFF00EB2A41 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					D81445962D6F0BFF00EB2A41 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					D81445A72D6F0C0100EB2A41 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = D81445962D6F0BFF00EB2A41;
+					};
+					D81445B12D6F0C0100EB2A41 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = D81445962D6F0BFF00EB2A41;
+					};
+				};
+			};
+			buildConfigurationList = D81445922D6F0BFF00EB2A41 /* Build configuration list for PBXProject "switch-bot-menu-bar" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D814458E2D6F0BFF00EB2A41;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = D81445982D6F0BFF00EB2A41 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D81445962D6F0BFF00EB2A41 /* switch-bot-menu-bar */,
+				D81445A72D6F0C0100EB2A41 /* switch-bot-menu-barTests */,
+				D81445B12D6F0C0100EB2A41 /* switch-bot-menu-barUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D81445952D6F0BFF00EB2A41 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D81445A62D6F0C0100EB2A41 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D81445B02D6F0C0100EB2A41 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D81445932D6F0BFF00EB2A41 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D81445A42D6F0C0100EB2A41 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D81445AE2D6F0C0100EB2A41 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D81445AA2D6F0C0100EB2A41 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D81445962D6F0BFF00EB2A41 /* switch-bot-menu-bar */;
+			targetProxy = D81445A92D6F0C0100EB2A41 /* PBXContainerItemProxy */;
+		};
+		D81445B42D6F0C0100EB2A41 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D81445962D6F0BFF00EB2A41 /* switch-bot-menu-bar */;
+			targetProxy = D81445B32D6F0C0100EB2A41 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D81445BA2D6F0C0100EB2A41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D81445BB2D6F0C0100EB2A41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		D81445BD2D6F0C0100EB2A41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "switch-bot-menu-bar/switch_bot_menu_bar.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"switch-bot-menu-bar/Preview Content\"";
+				DEVELOPMENT_TEAM = LZ5V2BZ3C8;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ardasatata.switch-bot-menu-bar";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D81445BE2D6F0C0100EB2A41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "switch-bot-menu-bar/switch_bot_menu_bar.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"switch-bot-menu-bar/Preview Content\"";
+				DEVELOPMENT_TEAM = LZ5V2BZ3C8;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ardasatata.switch-bot-menu-bar";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		D81445C02D6F0C0100EB2A41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LZ5V2BZ3C8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ardasatata.switch-bot-menu-barTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/switch-bot-menu-bar.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/switch-bot-menu-bar";
+			};
+			name = Debug;
+		};
+		D81445C12D6F0C0100EB2A41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LZ5V2BZ3C8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ardasatata.switch-bot-menu-barTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/switch-bot-menu-bar.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/switch-bot-menu-bar";
+			};
+			name = Release;
+		};
+		D81445C32D6F0C0100EB2A41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LZ5V2BZ3C8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ardasatata.switch-bot-menu-barUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "switch-bot-menu-bar";
+			};
+			name = Debug;
+		};
+		D81445C42D6F0C0100EB2A41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LZ5V2BZ3C8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ardasatata.switch-bot-menu-barUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "switch-bot-menu-bar";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D81445922D6F0BFF00EB2A41 /* Build configuration list for PBXProject "switch-bot-menu-bar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D81445BA2D6F0C0100EB2A41 /* Debug */,
+				D81445BB2D6F0C0100EB2A41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D81445BC2D6F0C0100EB2A41 /* Build configuration list for PBXNativeTarget "switch-bot-menu-bar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D81445BD2D6F0C0100EB2A41 /* Debug */,
+				D81445BE2D6F0C0100EB2A41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D81445BF2D6F0C0100EB2A41 /* Build configuration list for PBXNativeTarget "switch-bot-menu-barTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D81445C02D6F0C0100EB2A41 /* Debug */,
+				D81445C12D6F0C0100EB2A41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D81445C22D6F0C0100EB2A41 /* Build configuration list for PBXNativeTarget "switch-bot-menu-barUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D81445C32D6F0C0100EB2A41 /* Debug */,
+				D81445C42D6F0C0100EB2A41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D814458F2D6F0BFF00EB2A41 /* Project object */;
+}
