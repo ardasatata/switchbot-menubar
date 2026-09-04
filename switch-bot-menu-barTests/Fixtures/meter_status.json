@@ -1,0 +1,12 @@
+{
+  "statusCode": 100,
+  "message": "success",
+  "body": {
+    "deviceId": "F0731CD59F2E",
+    "deviceType": "Meter Plus",
+    "hubDeviceId": "000000000000",
+    "temperature": 22.5,
+    "humidity": 48,
+    "battery": 90
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "statusCode": 100,
+  "message": "success",
+  "body": {
+    "deviceId": "AAAAAAAAAAAA",
+    "deviceType": "Future Gadget 3000",
+    "hubDeviceId": "000000000000",
+    "power": "ON",
+    "brightness": "50",
+    "someNewField": {"nested": true}
+  }
+}

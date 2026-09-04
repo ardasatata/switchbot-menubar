@@ -1,0 +1,12 @@
+{
+  "statusCode": 100,
+  "message": "success",
+  "body": {
+    "deviceId": "3485181A85FE",
+    "deviceType": "Bot",
+    "hubDeviceId": "000000000000",
+    "power": "off",
+    "battery": 88,
+    "deviceMode": "switchMode"
+  }
+}
