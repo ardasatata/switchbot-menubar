@@ -1,0 +1,38 @@
+# macOS
+.DS_Store
+
+# Xcode
+build/
+DerivedData/
+*.moved-aside
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+*.xccheckout
+*.xcscmblueprint
+*.xcarchive
+
+# Swift Package Manager
+.swiftpm/
+.build/
+
+# CocoaPods / Carthage (unused here, harmless to ignore)
+Pods/
+Carthage/Build/
+
+# Obj-C/Swift specific
+*.hmap
+
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Local secrets — never commit real SwitchBot credentials
+*.local.json
+Secrets.swift
