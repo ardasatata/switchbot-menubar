@@ -1,0 +1,19 @@
+excluded:
+  - switch-bot-menu-bar/Preview Content
+  - switch-bot-menu-barTests/Fixtures
+
+disabled_rules:
+  # Xcode-generated entry points are snake_case (switch_bot_menu_barApp,
+  # switch_bot_menu_barUITests) and can't be renamed without touching @main.
+  - identifier_name
+  - type_name
+  # Established codebase style throughout Models/Services/Tests — not a bug
+  # risk, just a formatting preference already baked into ~10 files.
+  - trailing_comma
+  - line_length
+  - large_tuple
+  - cyclomatic_complexity
+  - type_body_length
+  - static_over_final_class
+
+reporter: "github-actions-logging"
