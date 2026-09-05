@@ -1,0 +1,19 @@
+//
+//  CI.xcconfig
+//  Signing overrides for CI build/test jobs.
+//
+//  Runners have no Developer ID certificate, so Automatic signing against
+//  the real team fails outright. Ad-hoc-sign instead ("-"): the binary must
+//  still be able to *run* (unit tests are host-app tests — TEST_HOST points
+//  at the built .app), which a fully unsigned binary cannot do on Apple
+//  Silicon. Clearing entitlements drops App Sandbox for the test run, which
+//  is what lets an ad-hoc-signed app launch and use the legacy-keychain
+//  fallback in CredentialStore.
+//
+
+CODE_SIGN_STYLE = Manual
+CODE_SIGN_IDENTITY = -
+CODE_SIGN_ENTITLEMENTS =
+DEVELOPMENT_TEAM =
+PROVISIONING_PROFILE_SPECIFIER =
+ENABLE_HARDENED_RUNTIME = NO

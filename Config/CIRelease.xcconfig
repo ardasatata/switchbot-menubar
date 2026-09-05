@@ -1,0 +1,21 @@
+//
+//  CIRelease.xcconfig
+//  Signing overrides for the tag-triggered release archive.
+//
+//  Same ad-hoc signing as CI.xcconfig, but explicitly swaps in
+//  Unsigned.entitlements (App Sandbox + keychain-access-groups removed)
+//  rather than clearing entitlements entirely, so the shipped .app still
+//  declares its one real requirement (outbound network access) and can use
+//  the legacy-keychain fallback in CredentialStore for credential storage.
+//
+//  Superseded once Developer ID signing + notarization is set up: at that
+//  point release builds should use the real
+//  switch_bot_menu_bar.entitlements again.
+//
+
+CODE_SIGN_STYLE = Manual
+CODE_SIGN_IDENTITY = -
+CODE_SIGN_ENTITLEMENTS = Config/Unsigned.entitlements
+DEVELOPMENT_TEAM =
+PROVISIONING_PROFILE_SPECIFIER =
+ENABLE_HARDENED_RUNTIME = NO

@@ -1,0 +1,121 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to build (no leading v), e.g. 1.0.0"
+        required: true
+
+env:
+  PROJECT: switch-bot-menu-bar.xcodeproj
+  SCHEME: switch-bot-menu-bar
+  PRODUCT_NAME: switch-bot-menu-bar
+  ARTIFACT_NAME: SwitchBotMenuBar
+
+jobs:
+  release:
+    name: Build & publish release
+    runs-on: macos-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
+      - name: Determine version
+        id: version
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            VERSION="${{ inputs.version }}"
+          else
+            VERSION="${GITHUB_REF_NAME#v}"
+          fi
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "Building version $VERSION"
+
+      - name: Archive
+        run: |
+          set -o pipefail
+          brew install xcbeautify
+          xcodebuild archive \
+            -project "$PROJECT" -scheme "$SCHEME" \
+            -configuration Release \
+            -archivePath build/App.xcarchive \
+            -xcconfig Config/CIRelease.xcconfig \
+            MARKETING_VERSION="${{ steps.version.outputs.version }}" \
+            CURRENT_PROJECT_VERSION="${{ github.run_number }}" \
+            | xcbeautify --renderer github-actions
+
+      - name: Verify build
+        run: |
+          APP="build/App.xcarchive/Products/Applications/$PRODUCT_NAME.app"
+          test -d "$APP"
+          echo "APP=$APP" >> "$GITHUB_ENV"
+
+          SHORT_VERSION=$(/usr/libexec/PlistBuddy -c "Print :CFBundleShortVersionString" "$APP/Contents/Info.plist")
+          echo "Bundle version: $SHORT_VERSION"
+          if [ "$SHORT_VERSION" != "${{ steps.version.outputs.version }}" ]; then
+            echo "::error::CFBundleShortVersionString ($SHORT_VERSION) does not match tag version (${{ steps.version.outputs.version }})"
+            exit 1
+          fi
+
+          codesign -dv --verbose=4 "$APP"
+
+      - name: Package zip
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          ditto -c -k --keepParent --sequesterRsrc "$APP" "$ARTIFACT_NAME-$VERSION.zip"
+
+      - name: Package dmg
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          STAGE=$(mktemp -d)
+          cp -R "$APP" "$STAGE/"
+          ln -s /Applications "$STAGE/Applications"
+          hdiutil create -volname "SwitchBot Menu Bar" -srcfolder "$STAGE" -ov -format UDZO "$ARTIFACT_NAME-$VERSION.dmg"
+          rm -rf "$STAGE"
+
+      - name: Checksums
+        run: |
+          shasum -a 256 "$ARTIFACT_NAME"-*.zip "$ARTIFACT_NAME"-*.dmg > SHA256SUMS.txt
+          cat SHA256SUMS.txt
+
+      - name: Publish release
+        if: github.event_name == 'push'
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          files: |
+            ${{ env.ARTIFACT_NAME }}-*.zip
+            ${{ env.ARTIFACT_NAME }}-*.dmg
+            SHA256SUMS.txt
+          body: |
+            ⚠️ **These builds are unsigned** (ad-hoc signature, no Developer ID / notarization yet).
+            macOS Gatekeeper will refuse to open them on first launch.
+
+            **To run the app:**
+            1. Unzip / mount the download and drag `switch-bot-menu-bar.app` to `/Applications`.
+            2. Right-click the app → **Open** → **Open** (or run
+               `xattr -dr com.apple.quarantine /Applications/switch-bot-menu-bar.app`).
+            3. On first launch you may see a "wants to use your confidential information" prompt
+               when saving a SwitchBot token — this is the legacy-keychain fallback used by
+               unsigned builds. Click **Always Allow**.
+
+            ---
+      - name: Upload build artifacts (manual dispatch)
+        if: github.event_name == 'workflow_dispatch'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.ARTIFACT_NAME }}-${{ steps.version.outputs.version }}
+          path: |
+            ${{ env.ARTIFACT_NAME }}-*.zip
+            ${{ env.ARTIFACT_NAME }}-*.dmg
+            SHA256SUMS.txt

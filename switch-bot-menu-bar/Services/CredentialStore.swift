@@ -39,6 +39,14 @@ final class InMemoryCredentialStore: CredentialStore, @unchecked Sendable {
 /// login keychain shows whenever the code signature changes between builds,
 /// at the (accepted, for a personal app) cost of the item not being visible
 /// in Keychain Access.app and being lost if the bundle ID or team changes.
+///
+/// Reading the Data Protection keychain requires the `keychain-access-groups`
+/// entitlement to resolve to a real team prefix. Ad-hoc/unsigned builds (e.g.
+/// CI release artifacts, which have no Developer ID cert) have no such
+/// prefix, so every operation fails with `errSecMissingEntitlement`
+/// (-34018). In that case we fall back to the legacy, file-based login
+/// keychain, which works for any signature but re-triggers the confidential-
+/// information prompt whenever the binary is rebuilt.
 struct KeychainCredentialStore: CredentialStore {
     private let service = "com.ardasatata.switchbot-menubar"
     private let tokenAccount = "openToken"
@@ -64,49 +72,64 @@ struct KeychainCredentialStore: CredentialStore {
 
     // MARK: - SecItem plumbing
 
-    private func baseQuery(account: String) -> [CFString: Any] {
-        [
+    private func baseQuery(account: String, useDataProtection: Bool) -> [CFString: Any] {
+        var query: [CFString: Any] = [
             kSecClass: kSecClassGenericPassword,
             kSecAttrService: service,
             kSecAttrAccount: account,
-            kSecUseDataProtectionKeychain: true,
         ]
+        if useDataProtection {
+            query[kSecUseDataProtectionKeychain] = true
+        }
+        return query
     }
 
-    private func readString(account: String) -> String? {
-        var query = baseQuery(account: account)
+    private func readString(account: String, useDataProtection: Bool = true) -> String? {
+        var query = baseQuery(account: account, useDataProtection: useDataProtection)
         query[kSecReturnData] = true
         query[kSecMatchLimit] = kSecMatchLimitOne
 
         var result: AnyObject?
         let status = SecItemCopyMatching(query as CFDictionary, &result)
-        guard status == errSecSuccess, let data = result as? Data else { return nil }
-        return String(data: data, encoding: .utf8)
+        if status == errSecSuccess, let data = result as? Data {
+            return String(data: data, encoding: .utf8)
+        }
+        if useDataProtection, status == errSecMissingEntitlement {
+            return readString(account: account, useDataProtection: false)
+        }
+        return nil
     }
 
-    private func write(account: String, value: String) throws {
+    private func write(account: String, value: String, useDataProtection: Bool = true) throws {
         let data = Data(value.utf8)
-        var query = baseQuery(account: account)
+        var query = baseQuery(account: account, useDataProtection: useDataProtection)
 
-        if readString(account: account) != nil {
+        let status: OSStatus
+        let updating = readString(account: account, useDataProtection: useDataProtection) != nil
+        if updating {
             let attributes: [CFString: Any] = [kSecValueData: data]
-            let status = SecItemUpdate(query as CFDictionary, attributes as CFDictionary)
-            guard status == errSecSuccess else {
-                throw SwitchBotError.transport("Keychain update failed (\(status))")
-            }
+            status = SecItemUpdate(query as CFDictionary, attributes as CFDictionary)
         } else {
             query[kSecValueData] = data
             query[kSecAttrAccessible] = kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly
-            let status = SecItemAdd(query as CFDictionary, nil)
-            guard status == errSecSuccess else {
-                throw SwitchBotError.transport("Keychain save failed (\(status))")
-            }
+            status = SecItemAdd(query as CFDictionary, nil)
         }
+
+        guard status != errSecSuccess else { return }
+        if useDataProtection, status == errSecMissingEntitlement {
+            try write(account: account, value: value, useDataProtection: false)
+            return
+        }
+        let verb = updating ? "update" : "save"
+        throw SwitchBotError.transport("Keychain \(verb) failed (\(status))")
     }
 
-    private func delete(account: String) {
-        let query = baseQuery(account: account)
-        SecItemDelete(query as CFDictionary)
+    private func delete(account: String, useDataProtection: Bool = true) {
+        let query = baseQuery(account: account, useDataProtection: useDataProtection)
+        let status = SecItemDelete(query as CFDictionary)
+        if useDataProtection, status == errSecMissingEntitlement {
+            delete(account: account, useDataProtection: false)
+        }
     }
 }
 

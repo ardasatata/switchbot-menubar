@@ -17,6 +17,12 @@ xcuserdata/
 *.xccheckout
 *.xcscmblueprint
 *.xcarchive
+*.xcresult
+
+# Local release build output (see scripts/release.sh, .github/workflows/release.yml)
+*.dmg
+*.zip
+SHA256SUMS.txt
 
 # Swift Package Manager
 .swiftpm/

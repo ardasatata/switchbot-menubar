@@ -1,10 +1,23 @@
 # switchbot-menubar
 
+[![CI](https://github.com/ardasatata/switchbot-menubar/actions/workflows/ci.yml/badge.svg)](https://github.com/ardasatata/switchbot-menubar/actions/workflows/ci.yml)
+
 A macOS menu bar app for controlling [SwitchBot](https://www.switch-bot.com) devices, built on
 the official [SwitchBot API v1.1](https://github.com/OpenWonderLabs/SwitchBotAPI).
 
 Not affiliated with SwitchBot / Wonderlabs. Each install uses your own Open Token and Secret Key
 against your own devices.
+
+## Download
+
+Prebuilt `.dmg` / `.zip` builds are published on the
+[Releases page](https://github.com/ardasatata/switchbot-menubar/releases/latest) whenever a
+`vX.Y.Z` tag is pushed.
+
+> **These builds are currently unsigned** (no Developer ID / notarization yet). After installing,
+> right-click the app → **Open** → **Open**, or run
+> `xattr -dr com.apple.quarantine /Applications/switch-bot-menu-bar.app`. Saving a token on first
+> launch may show a "wants to use your confidential information" prompt — click **Always Allow**.
 
 ## Features
 
@@ -47,9 +60,12 @@ under the target's Signing & Capabilities, and build. Deployment target is macOS
 
 ## Testing
 
+The `switch-bot-menu-bar` scheme is shared (committed under `xcodeproj/xcshareddata/`), so this
+runs unmodified on a fresh clone or in CI:
+
 ```
-xcodebuild -project switch-bot-menu-bar.xcodeproj -scheme switch-bot-menu-bar \
-  -destination 'platform=macOS' -only-testing:switch-bot-menu-barTests test
+xcodebuild test -project switch-bot-menu-bar.xcodeproj -scheme switch-bot-menu-bar \
+  -destination 'platform=macOS' -only-testing:switch-bot-menu-barTests
 ```
 
 The unit test suite covers request signing (against RFC 4231 HMAC-SHA256 vectors), response
@@ -57,6 +73,20 @@ decoding (including unknown/future device types), the device-capability system, 
 command quirks, rate limiting, and the app's optimistic-update state machine — all against a stub
 HTTP client, with one integration test proving the real networking stack. No credentials or
 network access are required to run it.
+
+## CI/CD
+
+- **`.github/workflows/ci.yml`** — on every push to `main` and every pull request: builds
+  Debug and Release, runs the unit tests, runs the UI tests, and runs SwiftLint (`--strict`).
+- **`.github/workflows/release.yml`** — on pushing a `vX.Y.Z` tag (or manual dispatch): archives
+  a Release build, packages it as a `.dmg` and `.zip`, and publishes a GitHub Release.
+- CI and release builds sign ad-hoc via `Config/CI.xcconfig` / `Config/CIRelease.xcconfig` —
+  runners have no Developer ID certificate. `Config/Unsigned.entitlements` drops App Sandbox and
+  `keychain-access-groups` for release builds so the app can still run and store credentials (see
+  the fallback in `Services/CredentialStore.swift`). Local development builds are unaffected and
+  keep using the real team/entitlements from the project's build settings.
+- To cut a release: `./scripts/release.sh 1.1.0` bumps `MARKETING_VERSION`, commits, and tags —
+  then push with `git push origin main --follow-tags` to trigger the release workflow.
 
 ## Architecture
 
