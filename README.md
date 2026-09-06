@@ -105,5 +105,6 @@ network access are required to run it.
 
 ## License
 
-No license file yet — all rights reserved by the author pending a decision. Open an issue if you'd
-like to use this code and a license hasn't been added.
+[GPLv3](LICENSE). Build and run it yourself for free from this source, or get a signed,
+notarized, auto-updating build from the App Store. Forks and redistributions must stay open
+source under the same license.
