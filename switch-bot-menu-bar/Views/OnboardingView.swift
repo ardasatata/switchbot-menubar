@@ -75,9 +75,17 @@ struct OnboardingView: View {
                     .frame(maxWidth: .infinity)
             }
             .buttonStyle(.bordered)
+            
+            HStack {
+                Link("How do I get a token?", destination: URL(string: "https://github.com/OpenWonderLabs/SwitchBotAPI#getting-started")!)
+                    .font(.caption)
 
-            Link("How do I get a token?", destination: URL(string: "https://github.com/OpenWonderLabs/SwitchBotAPI#getting-started")!)
-                .font(.caption)
+                Spacer()
+
+                Button("Quit") { NSApplication.shared.terminate(nil) }
+                    .buttonStyle(.plain)
+                    .font(.caption)
+            }
         }
         .padding(16)
         .frame(width: 300)
