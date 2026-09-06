@@ -19,6 +19,19 @@ Prebuilt `.dmg` / `.zip` builds are published on the
 > `xattr -dr com.apple.quarantine /Applications/switch-bot-menu-bar.app`. Saving a token on first
 > launch may show a "wants to use your confidential information" prompt — click **Always Allow**.
 
+## Screenshots
+
+All captured in Demo Mode — no real account or devices involved.
+
+<p>
+  <img src="screenshots/sensors-remotes.png" width="260" alt="Sensor readings and IR remote controls">
+  <img src="screenshots/lights-plug-curtain.png" width="260" alt="Color bulb, plug, and curtain controls">
+  <img src="screenshots/scenes-lighting.png" width="260" alt="Scenes and lighting controls">
+</p>
+<p>
+  <img src="screenshots/settings.png" width="260" alt="Settings pane">
+</p>
+
 ## Features
 
 - Lives entirely in the menu bar — no Dock icon, no main window.
