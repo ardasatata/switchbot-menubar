@@ -75,7 +75,7 @@ struct OnboardingView: View {
                     .frame(maxWidth: .infinity)
             }
             .buttonStyle(.bordered)
-            
+
             HStack {
                 Link("How do I get a token?", destination: URL(string: "https://github.com/OpenWonderLabs/SwitchBotAPI#getting-started")!)
                     .font(.caption)
